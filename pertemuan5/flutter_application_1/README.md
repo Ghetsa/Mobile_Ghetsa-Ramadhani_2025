@@ -22,10 +22,10 @@
 
 ## 8. Add a new page
 
-### 1. Sebelum tombol ditekan
+1. Sebelum tombol ditekan
 
 ![Screenshot Image Widget](images/08.png)
 
-### 2. Setelah tombol ditekan
+2. Setelah tombol ditekan
 
 ![Screenshot Image Widget](images/09.png)
