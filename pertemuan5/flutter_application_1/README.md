@@ -1,10 +1,5 @@
 ## Codelabs: Your first Flutter app
 
-### Menghubungkan ke perangkat android
-
-Berhasil menghubungkan ke perangkat android
-![Screenshot Text Widget](images/konek-device.jpg)
-
 ## 3. Create a project
 
 ![Screenshot Image Widget](images/03.png)
