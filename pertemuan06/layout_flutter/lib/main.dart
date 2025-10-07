@@ -20,46 +20,42 @@ class MyApp extends StatelessWidget {
                   padding: const EdgeInsets.only(bottom: 8),
                   child: const Text(
                     'Wisata Gunung di Batu',
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                    ),
+                    style: TextStyle(fontWeight: FontWeight.bold),
                   ),
                 ),
                 const Text(
                   'Batu, Malang, Indonesia',
-                  style: TextStyle(
-                    color: Colors.grey,
-                  ),
+                  style: TextStyle(color: Colors.grey),
                 ),
               ],
             ),
           ),
-          Icon(
-            Icons.star,
-            color: Colors.red[500],
-          ),
+          Icon(Icons.star, color: Colors.red[500]),
           const Text('41'),
         ],
       ),
     );
 
     // ====== buttonSection ======
+    Color color = Theme.of(context).primaryColor;
+
     Widget buttonSection = Row(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
-        _buildButtonColumn(Icons.call, 'CALL'),
-        _buildButtonColumn(Icons.near_me, 'ROUTE'),
-        _buildButtonColumn(Icons.share, 'SHARE'),
+        _buildButtonColumn(color, Icons.call, 'CALL'),
+        _buildButtonColumn(color, Icons.near_me, 'ROUTE'),
+        _buildButtonColumn(color, Icons.share, 'SHARE'),
       ],
     );
 
     // ====== textSection ======
-    Widget textSection = const Padding(
-      padding: EdgeInsets.all(32),
-      child: Text(
-        'Gunung di Batu menawarkan pemandangan yang indah dan jalur pendakian yang menarik. '
-        'Area ini cocok untuk wisata keluarga maupun pendaki pemula. Fasilitas dasar tersedia '
-        'di sekitar area bawah sehingga kunjungan menjadi nyaman.',
+    Widget textSection = Container(
+      padding: const EdgeInsets.all(32),
+      child: const Text(
+        'Gunung di Batu menawarkan pemandangan yang indah dan udara yang sejuk. '
+        'Tempat ini menjadi destinasi favorit bagi wisatawan yang ingin menikmati '
+        'keindahan alam Malang dari ketinggian. Banyak jalur pendakian menarik yang '
+        'bisa ditempuh baik oleh pendaki pemula maupun berpengalaman. ',
         softWrap: true,
       ),
     );
@@ -68,7 +64,7 @@ class MyApp extends StatelessWidget {
       title: 'Flutter layout: Ghetsa Ramadhani Riska Arryanti 2341720004',
       home: Scaffold(
         appBar: AppBar(
-          title: const Text('WISATA KOTA MALANG'),
+          title: const Text('WISATA KOTA MALANG - GHETSA (2341720004)'),
         ),
         body: ListView(
           children: [
@@ -88,21 +84,21 @@ class MyApp extends StatelessWidget {
     );
   }
 
-  // helper buat tombol
-  Column _buildButtonColumn(IconData icon, String label) {
+  // ====== helper method ======
+  Column _buildButtonColumn(Color color, IconData icon, String label) {
     return Column(
       mainAxisSize: MainAxisSize.min,
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Icon(icon, color: Colors.blue),
+        Icon(icon, color: color),
         Container(
           margin: const EdgeInsets.only(top: 8),
           child: Text(
             label,
-            style: const TextStyle(
+            style: TextStyle(
               fontSize: 12,
               fontWeight: FontWeight.w400,
-              color: Colors.blue,
+              color: color,
             ),
           ),
         ),

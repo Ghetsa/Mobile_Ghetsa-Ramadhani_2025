@@ -15,7 +15,7 @@ void main() {
   // list1 = [1, 2, null];
   var list1 = [1, 2, null]; // Tambahkan var agar tidak error
   print(list1);
-  var list3 = [0, ...?list1];
+  var list3 = [0, ...list1];
   print(list3.length);
 
   // Tambahkan variabel list berisi NIM Anda menggunakan Spread Operators

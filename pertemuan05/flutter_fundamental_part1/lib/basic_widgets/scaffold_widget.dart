@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class ScaffoldWidget extends StatefulWidget {
-  const ScaffoldWidget({Key? key}) : super(key: key);
+  const ScaffoldWidget({super.key});
 
   @override
   State<ScaffoldWidget> createState() => _ScaffoldWidgetState();
