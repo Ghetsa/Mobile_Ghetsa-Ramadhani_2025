@@ -1,16 +1,28 @@
-# belanja
+# Praktikum 5 & Tugas 2 Flutter – Navigasi dan Hero Animation
 
-A new Flutter project.
+## Deskripsi
 
-## Getting Started
+Aplikasi Flutter sederhana bertema toko IT yang menampilkan daftar barang dalam tampilan GridView. Pengguna dapat mengetuk produk untuk melihat detailnya menggunakan navigasi antar halaman.
 
-This project is a starting point for a Flutter application.
+## Fitur
 
-A few resources to get you started if this is your first Flutter project:
+- Navigasi antar halaman dengan `Navigator` dan `ModalRoute`
+- Hero Animation antara gambar di HomePage dan ItemPage
+- Menampilkan atribut: nama, harga, stok, dan rating
+- GridView bergaya marketplace
+- Footer dengan Nama dan NIM
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Tampilan
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### Praktikum 5
+
+![Homepage](assets/images/01.png)
+![DetailPage](assets/images/02.png)
+
+### Tugas Praktikum 2
+
+![Homepage](assets/images/03.png)
+![DetailPage](assets/images/04.png)
+
+**Nama:** Ghetsa Ramadhani Riska Arryanti  
+**NIM:** 2341720004

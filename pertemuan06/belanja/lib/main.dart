@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'pages/home_page.dart';
 import 'pages/item_page.dart';
-import 'models/item.dart';
 
 void main() {
   runApp(const BelanjaApp());
@@ -13,8 +12,9 @@ class BelanjaApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Aplikasi Belanja',
-      theme: ThemeData(primarySwatch: Colors.blue),
+      debugShowCheckedModeBanner: false,
+      title: 'Aplikasi Belanja Flutter',
+      theme: ThemeData(primarySwatch: Colors.teal),
       initialRoute: '/',
       routes: {
         '/': (context) => const HomePage(),
