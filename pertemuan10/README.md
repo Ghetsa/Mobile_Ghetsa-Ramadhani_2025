@@ -106,15 +106,3 @@ void dispose() {
 ➡️ Kedua method ini termasuk bagian dari **lifecycle StatefulWidget**, berfungsi memastikan widget bekerja efisien dan bebas error dalam jangka panjang.
 
 ---
-
-## 📁 Dokumentasi Proyek
-
-| Keterangan | Isi |
-|-------------|-----|
-| **Nama Aplikasi** | Master Plan |
-| **Folder Proyek** | `src/week-10/master_plan` |
-| **GIF Demo** | `gif/plan_screen_demo.gif` |
-| **Bahasa Pemrograman** | Flutter (Dart) |
-| **Repository GitHub** | [https://github.com/oltha/master_plan](https://github.com/oltha/master_plan) *(contoh link)* |
-
----
