@@ -1,4 +1,10 @@
-# Praktikum & Tugas Praktikum Manajemen Plugin – Plugin auto_size_text
+# 🧩 Praktikum & Tugas Praktikum Manajemen Plugin
+**Mata Kuliah:** Pemrograman Mobile  
+**Topik:** Plugin auto_size_text   
+**Nama:** Ghetsa Ramadhani Riska Arryanti  
+**Kelas:** 3D - D4 Teknik Informatika 
+**NIM:** 2341720004
+
 
 ## Deskripsi
 
@@ -33,6 +39,3 @@ Praktikum ini bertujuan untuk mempelajari cara menambahkan dan menggunakan plugi
 ![Menambahkan plugin](assets/images/02.png)
 ![Sebelum menekan tombol](assets/images/03.png)
 ![Setelah menekan tombol](assets/images/04.png)
-
-**Nama:** Ghetsa Ramadhani Riska Arryanti  
-**NIM:** 2341720004
