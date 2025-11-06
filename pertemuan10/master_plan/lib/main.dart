@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import './views/plan_screen.dart';
+import './provider/plan_provider.dart';
+import './models/data_layer.dart';
 
 void main() => runApp(const MasterPlanApp());
 
@@ -9,22 +11,19 @@ class MasterPlanApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
       title: 'Master Plan App',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch: Colors.yellow,
-        scaffoldBackgroundColor: const Color.fromARGB(255, 255, 253, 248),
-        appBarTheme: const AppBarTheme(
-          backgroundColor: Color.fromARGB(255, 237, 221, 39), // ungu tua
-          foregroundColor: Colors.white, // teks putih
-          elevation: 3,
-        ),
+        primarySwatch: Colors.purple,
         floatingActionButtonTheme: const FloatingActionButtonThemeData(
-          backgroundColor: Color.fromARGB(255, 255, 255, 73), // tombol tambah ungu tua
-          
+          backgroundColor: Colors.purple,
+          foregroundColor: Colors.white,
         ),
       ),
-      home: const PlanScreen(),
+      home: PlanProvider(
+        notifier: ValueNotifier<Plan>(const Plan()),
+        child: const PlanScreen(),
+      ),
     );
   }
 }

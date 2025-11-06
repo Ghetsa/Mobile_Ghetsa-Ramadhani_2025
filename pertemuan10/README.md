@@ -1,23 +1,12 @@
-# 🧩 Praktikum 1: Dasar State dengan Model-View
+
 **Mata Kuliah:** Pemrograman Mobile  
-**Topik:** State Management dan Pemisahan Model-View   
+**Topik:** Dasar State Management 
 **Nama:** Ghetsa Ramadhani Riska Arryanti  
 **Kelas:** 3D - D4 Teknik Informatika 
 **NIM:** 2341720004
 
-## 📘 Deskripsi
 
-Praktikum ini bertujuan untuk memahami **konsep dasar state management** pada Flutter menggunakan pendekatan **Model-View**.  
-Mahasiswa diminta membuat aplikasi sederhana bernama **Master Plan**, yang digunakan untuk mencatat daftar tugas (*to-do list*) dengan fitur tambah tugas, ubah status tugas, serta pengelolaan tampilan menggunakan `StatefulWidget` dan `ScrollController`.
-
-## ⚙️ Fitur Aplikasi
-
-- Penerapan konsep **Model-View Separation**  
-- Penggunaan **StatefulWidget** untuk mengelola perubahan data secara real-time  
-- Tambah dan ubah status tugas menggunakan tombol dan checkbox  
-- Penanganan scroll serta keyboard behavior dengan **ScrollController**  
-
----
+# 🧩 Praktikum 1: Dasar State dengan Model-View
 
 ## 🧠 Soal dan Penjelasan Langkah-langkah Penting
 
@@ -104,5 +93,55 @@ void dispose() {
 ```
 
 ➡️ Kedua method ini termasuk bagian dari **lifecycle StatefulWidget**, berfungsi memastikan widget bekerja efisien dan bebas error dalam jangka panjang.
+
+---
+
+# 🧩 Praktikum 2: InheritedWidget
+## 🧠 Soal dan Penjelasan Langkah-langkah Penting
+### Jelaskan mana yang dimaksud InheritedWidget pada langkah 1 tersebut! Mengapa yang digunakan InheritedNotifier?
+
+**Langkah 1: InheritedWidget / InheritedNotifier**
+
+`InheritedWidget` adalah widget dasar di Flutter yang memungkinkan data dibagikan ke seluruh subtree widget tanpa harus diteruskan secara manual melalui parameter constructor.
+Namun pada praktikum ini digunakan InheritedNotifier, yaitu turunan dari `InheritedWidget` yang bekerja sama dengan ChangeNotifier.
+
+**Alasannya:**
+
+* `InheritedNotifier` otomatis mendengarkan perubahan data dari model (melalui ChangeNotifier)
+* Ketika model berubah, widget yang berlangganan otomatis ter-rebuild
+* Membuat kode lebih bersih dan efisien dibandingkan setState() manual di banyak tempat
+
+### Jelaskan maksud dari method di langkah 3 pada praktikum tersebut! Mengapa dilakukan demikian?
+
+**Langkah 3: Method ini umumnya berupa getter atau method statis yang mengakses InheritedWidget dari context, seperti:**
+
+```dart
+static PlanProvider of(BuildContext context) {
+  final PlanProvider? result =
+      context.dependOnInheritedWidgetOfExactType<PlanProvider>();
+  assert(result != null, 'No PlanProvider found in context');
+  return result!;
+}
+```
+
+
+**Tujuannya:**
+
+* Memberikan cara mudah untuk mengakses state global (PlanProvider) dari mana saja di dalam tree widget.
+* Dengan cara ini, widget lain dapat memanggil PlanProvider.of(context) untuk mendapatkan atau memperbarui data tanpa harus mengoper variabel antar halaman.
+
+### Lakukan capture hasil dari Langkah 9 berupa GIF, kemudian jelaskan apa yang telah Anda buat!
+#### 📸 Tampilan Aplikasi:
+> ![hasil praktikum 2](images/praktikum2-1.png)
+> ![hasil praktikum 2](images/praktikum2-2.png)
+
+**💬 Penjelasan**
+Pada langkah ini, aplikasi Master Plan telah dimodifikasi menggunakan InheritedNotifier.
+Ketika pengguna menambah atau mengubah tugas:
+* Data otomatis diperbarui pada model (Plan)
+* Widget yang menampilkan daftar tugas ikut ter-update tanpa setState() manual
+* Perubahan status checkbox dan teks langsung terlihat real-time
+
+Dengan pendekatan ini, aplikasi menjadi **lebih efisien, scalable, dan mudah dikembangkan**.
 
 ---
