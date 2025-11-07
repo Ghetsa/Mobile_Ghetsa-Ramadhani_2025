@@ -130,7 +130,7 @@ static PlanProvider of(BuildContext context) {
 * Memberikan cara mudah untuk mengakses state global (PlanProvider) dari mana saja di dalam tree widget.
 * Dengan cara ini, widget lain dapat memanggil PlanProvider.of(context) untuk mendapatkan atau memperbarui data tanpa harus mengoper variabel antar halaman.
 
-### Lakukan capture hasil dari Langkah 9 berupa GIF, kemudian jelaskan apa yang telah Anda buat!
+### Lakukan capture hasil dari Langkah 9, kemudian jelaskan apa yang telah Anda buat!
 #### 📸 Tampilan Aplikasi:
 > ![hasil praktikum 2](images/praktikum2-1.png)
 > ![hasil praktikum 2](images/praktikum2-2.png)
@@ -143,5 +143,58 @@ Ketika pengguna menambah atau mengubah tugas:
 * Perubahan status checkbox dan teks langsung terlihat real-time
 
 Dengan pendekatan ini, aplikasi menjadi **lebih efisien, scalable, dan mudah dikembangkan**.
+
+---
+
+
+# 🧩 Praktikum 3: State di Multiple Screens
+## 🧠 Soal dan Penjelasan Langkah-langkah Penting
+### Penjelasan Diagram
+![Diagram](diagram.png)
+
+
+**Makna Diagram:**
+Diagram ini menggambarkan aliran data dan state antar beberapa layar (multiple screens) dalam aplikasi Master Plan.
+
+**Penjelasannya:**
+
+1. `PlanCreatorScreen`
+Merupakan layar utama tempat pengguna membuat dan memilih plan baru.
+Di layar ini, data semua plan disimpan dalam PlanProvider, yaitu InheritedNotifier yang menjadi sumber state global.
+
+2. `PlanProvider`
+Bertindak sebagai penyedia (provider) state global aplikasi.
+Ia menyimpan ValueNotifier<List<Plan>> yang dapat diakses oleh semua widget dalam subtree.
+Ketika ada perubahan pada data plans, semua widget yang menggunakan PlanProvider otomatis ter-rebuild.
+
+3. `PlanScreen`
+Layar kedua yang menampilkan daftar tugas (tasks) dari satu plan tertentu.
+Saat pengguna menambah, mengedit, atau mencentang task, perubahan dikirim ke PlanProvider, sehingga data tetap sinkron di semua layar.
+
+4. `Alur Data (State Flow)`
+Perubahan dari PlanScreen (misalnya menambah task)
+⮕ Mengubah data di PlanProvider
+⮕ PlanCreatorScreen ikut ter-update (menampilkan jumlah tugas yang berubah).
+
+➡️ Dengan kata lain, diagram ini menjelaskan bahwa state (data plan dan task) bersifat global & reaktif, dikelola satu sumber (PlanProvider), meskipun aplikasi memiliki lebih dari satu screen.
+
+
+### Lakukan capture hasil dari Langkah 14, kemudian jelaskan apa yang telah Anda buat!
+#### 📸 Tampilan Aplikasi:
+> ![hasil praktikum 3](images/demo_master_plans.gif)
+
+**💬 Penjelasan**
+Pada langkah ini, aplikasi Master Plan telah mendukung state management lintas layar (multi-screen).
+Perubahan yang dilakukan pada halaman detail plan (PlanScreen) akan langsung diperbarui di halaman utama (PlanCreatorScreen) tanpa memerlukan refresh manual.
+
+**Fitur-fitur yang sudah berjalan:**
+
+1. Pengguna dapat menambahkan beberapa plan melalui halaman utama.
+
+2. Setiap plan memiliki daftar tugas sendiri (dapat menambah, mengedit, dan mencentang task).
+
+3. Semua perubahan tugas otomatis tersinkron dengan halaman utama berkat penggunaan InheritedNotifier (PlanProvider).
+
+4. Tampilan dibuat lebih menarik dengan warna ungu lembut, border tipis, dan garis pemisah antar plan.
 
 ---
