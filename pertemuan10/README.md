@@ -150,7 +150,7 @@ Dengan pendekatan ini, aplikasi menjadi **lebih efisien, scalable, dan mudah dik
 # 🧩 Praktikum 3: State di Multiple Screens
 ## 🧠 Soal dan Penjelasan Langkah-langkah Penting
 ### Penjelasan Diagram
-![Diagram](diagram.png)
+![Diagram](images/diagram.png)
 
 
 **Makna Diagram:**
